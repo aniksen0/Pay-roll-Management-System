@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheeet" href="<?=base_url();?>/public/Assets/boot/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=base_url();?>/public/Assets/css/userprofilecss.css" >
+    <link rel="stylesheet" href="<?=base_url();?>/public/Assets/css/mainStyle.css" >
+    <title>User Profile|Payroll Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<div class="container border">
+    <br>
+    <br>
+    <br>
+    <div class="col col-sm-11 alert alert-danger"> Welcome <?=$emp_info['emp_name']?> <a style="text-decoration: none; background-color: indianred;color: #9fcdff" href="<?=base_url();?>/logout"><button style="background-color: indianred" id="btn btn-alert" type="submit"> Log-Out</button></a> </div>
+        <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                            <div class="mt-3">
+                                <h4><?=$emp_info['emp_designation']?></h4>
+                                <p class="text-secondary mb-1"><?=$emp_info['emp_name']?></p>
+                                <p class="text-muted font-size-sm"><?=$emp_info['emp_address']?></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6>Nationality</h6>
+                            <span class="text-secondary"><?=$emp_info['emp_nationality']?></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6>Date Of Birth</h6>
+                            <span class="text-secondary"><?=$emp_info['emp_dob']?></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6>Father Name</h6>
+                            <span class="text-secondary"><?=$emp_info['emp_father_name']?></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6>Mother Name</h6>
+                               <span class="text-secondary"><?=$emp_info['emp_motherName']?></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6>Working Hour </h6>
+                               <span class="text-secondary"><?=$emp_info['emp_blood_group']?></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6>Over Time</h6>
+                             <span class="text-secondary"><?=$emp_info['emp_over_time']?></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Full Name</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <?=$emp_info['emp_name']?>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Email</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <?=$emp_info['emp_email']?>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Phone</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                +880- <?=$emp_info['emp_contact_number']?>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">emergency Number</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                +880- <?=$emp_info['emp_local_contact_number']?>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Local-Address</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <?=$emp_info['emp_local_address']?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gutters-sm">
+                    <div class="col-sm-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6>Employment Info:</h6>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h6 class="mb-0">Designation: </h6>
+                                    </div>
+                                    <div class="col-sm-8 text-secondary">
+                                        <?=$emp_info['emp_designation']?>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h6 class="mb-0">Branch: </h6>
+                                    </div>
+                                    <div class="col-sm-8 text-secondary">
+                                        <?=$emp_info['emp_branch']?>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h6 class="mb-0">Department: </h6>
+                                    </div>
+                                    <div class="col-sm-8 text-secondary">
+                                        <?=$emp_info['emp_department']?>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h6 class="mb-0">Joining Date: </h6>
+                                    </div>
+                                    <div class="col-sm-8 text-secondary">
+                                        <?=$emp_info['emp_joining_date']?>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h6 class="mb-0">Agreement Date: </h6>
+                                    </div>
+                                    <div class="col-sm-8 text-secondary">
+                                        <?=$emp_info['emp_joining_date']?>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h6 class="mb-0">Joining Date: </h6>
+                                    </div>
+                                    <div class="col-sm-8 text-secondary">
+                                        <?=$emp_info['emp_joining_date']?>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h6 class="mb-0">Visa Status: </h6>
+                                    </div>
+                                    <div class="col-sm-8 text-secondary">
+                                        <?=$emp_info['emp_visa_status']?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6>Machine Code:</h6>
+                                <span class="text-secondary"><?=$emp_info['emp_attendance_machine_code']?></span>
+                            </li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

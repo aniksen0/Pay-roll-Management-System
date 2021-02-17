@@ -1,0 +1,17 @@
+$query=$this->db->query("SELECT * from empinfo WHERE emp_id=3");
+        $result=$query->getResult();
+        if (count($result)<1)
+        {
+            return "no data here";
+        }
+        else
+        {
+            print_r($result);
+            return $result;
+        }
+
+
+
+$id=3;
+        $sql=("SELECT * from empinfo WHERE emp_id= ? ");
+        $query=$this->db->query($sql, array($id));

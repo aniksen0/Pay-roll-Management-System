@@ -1,0 +1,34 @@
+CREATE TABLE empinfo
+(
+    emp_id int(30) AUTO_INCREMENT NOT Null,
+    emp_name varchar(30),
+    emp_father_name varchar(30),
+    emp_gender varchar(30),
+   	emp_dob date,
+    emp_nationality varchar(30),
+    emp_email varchar(30),
+    emp_address varchar(30),
+    emp_contact_number int(30),
+    emp_local_address varchar(30),
+   emp_local_contact_number varchar(30),
+    emp_address_overseas varchar(30),
+   emp_blood_group varchar(30),
+   emp_attendance_machine_code varchar(30),
+    emp_img varchar(30),
+   emp_role int(30),
+    emp_department varchar(30),
+   emp_division varchar(30),
+    emp_branch varchar(30),
+   emp_designation varchar(30),
+    emp_joining_date date,
+    emp_agreement_date date,
+    emp_visa_status varchar(30),
+    emp_labor_contract_type varchar(30),
+    emp_working_hours varchar(30),
+    emp_over_time varchar(30),
+    emp_eligibility varchar(30),
+    PRIMARY KEY(emp_id),
+    FOREIGN KEY(emp_role) REFERENCES role(role_id)
+    
+    
+);

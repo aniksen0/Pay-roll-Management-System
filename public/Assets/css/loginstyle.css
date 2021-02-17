@@ -1,0 +1,18 @@
+.move
+{
+    padding-top: 18%;
+}
+
+body {
+    background-image:  url("../img/2454628.png");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+
+}
+.ash
+{
+    color:#86b7fe;
+}
