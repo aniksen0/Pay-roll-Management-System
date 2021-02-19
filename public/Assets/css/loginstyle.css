@@ -2,6 +2,11 @@
 {
     padding-top: 18%;
 }
+.move2
+{
+    position: absolute;
+    padding-top: 10%;
+}
 
 body {
     background-image:  url("../img/2454628.png");

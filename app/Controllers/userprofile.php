@@ -30,5 +30,11 @@ class userprofile extends Controller
 
         return view("userprofile_v",$data);
     }
+    public function userview($id)
+    {
+        $data['emp_info']=$this->userdata->loaddata($id);
+
+        return view("userprofile_v",$data);
+    }
 
 }

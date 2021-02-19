@@ -20,7 +20,7 @@ class userstatusModel extends Model
         $result=$query->getResult();
         if (count($result)<1)
         {
-            return "no data here";
+            return $result=0;
         }
         else
         {

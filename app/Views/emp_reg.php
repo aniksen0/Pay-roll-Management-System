@@ -73,8 +73,8 @@
 
                 </div>
             </div>
-            <br>
-            <br>
+
+        <hr>
 
             <div class="form-row row">
                 <p> <strong> Basic Info </strong> </p>
@@ -88,7 +88,11 @@
                 </div>
                 <div class="col-sm-3">
                     <label for="gender"><b>Gender:</b></label>
-                    <input class="input form-control" type="text" size="15" placeholder="Gender: eg- M or F" name="gender" id="gender" required>
+                    <select class="input form-control"  id="gender" size="1"  name="gender">
+                        <option value="" selected>Select Gender</option>
+                        <option value="M">Male</option>
+                        <option value="F" >Female</option>
+                        <select>
                 </div>
                 <div class="col-sm-3">
                     <label for="nationality"><b>Nationality:</b></label>
@@ -119,6 +123,7 @@
                     <input class="input form-control" type="date" size="15" placeholder="DOB" name="dob" id="dob" required>
                 </div>
             </div>
+
             <hr>
             <div class="form-row row">
                 <p><strong><u> Employment Info </u></strong> </p>
@@ -170,7 +175,7 @@
             </div>
             <hr>
             <div class="form-row row">
-                <div class="col-sm-6 form-content">
+                <div class="col-sm-5 form-content">
 
                     <label for="role">Place a job role:</label>
                     <select class="input form-control"  id="role" size="1"  name="role">
@@ -181,17 +186,24 @@
                     <hr>
                 </div>
 
-                <div class="col-sm-5">
-                    <label for="date"><b>Joining Date:</b></label>
-                    <input class="input form-control" type="date" size="25" placeholder="Enter date" name="jod" id="date" required>
-                    <hr>
-                </div>
             </div>
             <br>
-            <div class="col-sm-12">
-                <label for="ec"><b>Emergency Contact No:</b></label>
-                <input class="input form-control" type="text" placeholder="Contact no" name="ec" id="ec" required>
+        <div class="row">
+            <div class="col-sm-4 form-content">
+                <label for="ec"><b>Update Emergency Contact No:</b></label>
+                <input class="input form-control" type="text" placeholder="Emergency Contact no" name="ec" id="ec" required>
                 <br>
+                <hr>
+            </div>
+            <div class="col-sm-4 form-content">
+                <label for="jobtypes"><b>Job Types</b></label>
+                <select class="input form-control"  id="jobtypes" size="1"  name="jobtypes">
+                    <option value="1"> Contractual</option>
+                    <option value="2"> Hourley</option>
+                    <option value="3"> Monthly</option>
+                    <option value="4"> Part-time</option>
+                </select>
+
                 <hr>
             </div>
             <hr>

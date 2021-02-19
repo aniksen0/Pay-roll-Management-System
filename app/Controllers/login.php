@@ -66,7 +66,7 @@ class login extends Controller
                             $this->session->setTempdata("role",$userdata['emp_role']);
                             if ($userdata['emp_role']==1)
                             {
-                                return redirect()->to('/adminAddHr');
+                                return redirect()->to('/sysadmin');
                             }
                             else if ($userdata['emp_role']==2)
                             {

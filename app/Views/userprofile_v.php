@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="<?=base_url();?>/public/Assets/css/userprofilecss.css" >
     <link rel="stylesheet" href="<?=base_url();?>/public/Assets/css/mainStyle.css" >
     <title>User Profile|Payroll Management System</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </head>
 <div class="container border">
     <br>
     <br>
     <br>
-    <div class="col col-sm-11 alert alert-danger"> Welcome <?=$emp_info['emp_name']?> <a style="text-decoration: none; background-color: indianred;color: #9fcdff" href="<?=base_url();?>/logout"><button style="background-color: indianred" id="btn btn-alert" type="submit"> Log-Out</button></a> </div>
+    <div class="col col-sm-12 alert alert-danger"> Profile of <?=$emp_info['emp_name']?> <a class="float-right" style="text-decoration: none; background-color: indianred;color: #9fcdff" href="<?=base_url();?>/logout"><button style="background-color: indianred" id="btn btn-alert" type="submit"> Log-Out</button></a> </div>
         <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
                 <div class="card">
@@ -60,7 +60,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-sm-8">
                 <div class="card mb-3">
                     <div class="card-body">
                         <div class="row">
@@ -110,77 +110,88 @@
                     </div>
                 </div>
                 <div class="row gutters-sm">
-                    <div class="col-sm-6 mb-3">
+                    <div class="col-sm-5 mb-3">
                         <div class="card h-100">
                             <div class="card-body">
                                 <h6>Employment Info:</h6>
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-5">
                                         <h6 class="mb-0">Designation: </h6>
                                     </div>
-                                    <div class="col-sm-8 text-secondary">
+                                    <div class="col-sm-7 text-secondary">
                                         <?=$emp_info['emp_designation']?>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-5">
                                         <h6 class="mb-0">Branch: </h6>
                                     </div>
-                                    <div class="col-sm-8 text-secondary">
+                                    <div class="col-sm-7 text-secondary">
                                         <?=$emp_info['emp_branch']?>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-5">
                                         <h6 class="mb-0">Department: </h6>
                                     </div>
-                                    <div class="col-sm-8 text-secondary">
+                                    <div class="col-sm-7 text-secondary">
                                         <?=$emp_info['emp_department']?>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-5">
                                         <h6 class="mb-0">Joining Date: </h6>
                                     </div>
-                                    <div class="col-sm-8 text-secondary">
+                                    <div class="col-sm-7 text-secondary">
                                         <?=$emp_info['emp_joining_date']?>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-5">
                                         <h6 class="mb-0">Agreement Date: </h6>
                                     </div>
-                                    <div class="col-sm-8 text-secondary">
+                                    <div class="col-sm-7 text-secondary">
                                         <?=$emp_info['emp_joining_date']?>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-5">
                                         <h6 class="mb-0">Joining Date: </h6>
                                     </div>
-                                    <div class="col-sm-8 text-secondary">
+                                    <div class="col-sm-7 text-secondary">
                                         <?=$emp_info['emp_joining_date']?>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-5">
                                         <h6 class="mb-0">Visa Status: </h6>
                                     </div>
-                                    <div class="col-sm-8 text-secondary">
+                                    <div class="col-sm-7 text-secondary">
                                         <?=$emp_info['emp_visa_status']?>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <h6 class="mb-0">Machine Code: </h6>
+                                    </div>
+                                    <div class="col-sm-7 text-secondary">
+                                        <span class="text-secondary"><?=$emp_info['emp_attendance_machine_code']?></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                    <div class="card mt-3">
+                    <div class="card col-12 col-sm-5">
+                        <h5>Salary Info:</h5>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                 <h6>Machine Code:</h6>
                                 <span class="text-secondary"><?=$emp_info['emp_attendance_machine_code']?></span>
                             </li>
-                            </ul>
+                        </ul>
                     </div>
+
                 </div>
             </div>
         </div>

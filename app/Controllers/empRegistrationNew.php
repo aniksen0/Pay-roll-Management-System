@@ -70,6 +70,8 @@ class empRegistrationNew extends Controller
                     "emp_eligibility"=>$this->request->getVar("eligibility"),
                     "emp_contact_number"=>$this->request->getVar("ec"),
                     "emp_img"=>"null",
+                    "jobtypes"=>$this->request->getVar("jobtypes"),
+                    "emp_emergency_cn"=>$this->request->getVar("ec"),
 
 
 

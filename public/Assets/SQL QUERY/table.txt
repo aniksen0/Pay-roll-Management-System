@@ -32,3 +32,42 @@ CREATE TABLE empinfo
     
     
 );
+
+CREATE TABLE salary
+(
+    emp_id int(30),
+    emp_basic_salary varchar(30),
+    emp_allowances varchar(30),
+    emp_skills_record varchar(30),
+    emp_qualification varchar(30),
+    emp_training_record varchar(30),
+    emp_bank_account varchar(30),
+    emp_bank_name varchar(30),
+    emp_nomination varchar(30),
+    PRIMARY KEY(emp_id),
+    FOREIGN KEY(emp_id) REFERENCES empinfo(emp_id)   
+);
+
+CREATE TABLE jobtypes
+(
+    typeid int(30) AUTO_INCREMENT NOT NULL,
+    jobtypename varchar(30),
+    PRIMARY KEY(typeid)
+);
+
+ALTER TABLE empinfo
+ADD FOREIGN KEY (jobtypes) REFERENCES jobtypes(typeid);
+
+
+
+CREATE TABLE loan
+(
+    emp_id int(30),
+    emp_loan_amount varchar(30),
+    emp_loan_max_amount varchar(30),
+    emp_deduction_loan_monthly varchar(30),
+    emp_recurring_deduction varchar(30),
+    emp_warning_status varchar(30),
+    FOREIGN KEY (emp_id) REFERENCES empinfo(emp_id),
+    PRIMARY KEY(emp_id)
+);

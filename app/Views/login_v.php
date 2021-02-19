@@ -16,8 +16,36 @@
 </head>
 
 <body>
+<!--<div class="container d-flex justify-content-center align-self-center">-->
+<!--    <div class="row ">-->
+<!--        <div class="col-sm-10">-->
+<!--        <span>-->
+<!--        --><?php
+//        if (isset($validation)):?>
+<!--            <div class="alert alert-danger"> --><?php //echo $validation->listErrors();?><!--  </div>-->
+<!--        --><?php //endif;?>
+<!---->
+<!--            --><?php //if(session()->getTempdata('error')):?>
+<!--                <div class="alert alert-danger">--><?//=session()->getTempdata("error");?><!--</div>-->
+<!--            --><?php //endif; ?>
+<!--        </span>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
 <div class="container d-flex justify-content-center align-self-center move">
+
     <div class="row ">
+
+            <?php
+            if (isset($validation)):?>
+                <div class="alert alert-danger"> <?php echo $validation->listErrors();?>  </div>
+            <?php endif;?>
+
+            <?php if(session()->getTempdata('error')):?>
+                <div class="alert alert-danger"> <?=session()->getTempdata("error");?> </div>
+            <?php endif; ?>
+
         <div class="sidenav col-12 col-sm-4">
             <div class="login-main-text text-center a">
                 <h2 class="ash">Pay-roll Management System</h2>
@@ -29,14 +57,7 @@
             <div class="col-md-6 col-sm-12">
                 <div class="login-form">
 
-                        <?php
-                        if (isset($validation)):?>
-                            <div class="alert alert-danger"> <?php echo $validation->listErrors();?>  </div>
-                        <?php endif;?>
 
-                    <?php if(session()->getTempdata('error')):?>
-                    <div class="alert alert-danger"><?=session()->getTempdata("error");?></div>
-                    <?php endif; ?>
                     <?=form_open()?>
                         <div class="form-group">
                             <label for="id" class="ash"><strong> User Id: </strong> </label>
@@ -53,6 +74,8 @@
             </div>
         </div>
     </div>
+
+
 </div>
 
 <footer style="padding-top: 15px;align-content: center " class=" d-flex justify-content-center">
