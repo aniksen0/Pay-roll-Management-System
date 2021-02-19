@@ -51,7 +51,6 @@
                                 <td><?=$row->emp_nomination?></td>
                                 <td><?=$row->emp_bank_account?></td>
                                 <td><?=$row->emp_bank_name?></td>
-
                                 <td><a onclick="sure()" href="<?=base_url('salary/salarydelete/'.$row->emp_id)?>"><button class="btn btn-danger"><i class="fas fa-trash-alt"></i> delete </button></a>
                                     <a href="<?=base_url('salary/salaryupdateedit/'.$row->emp_id)?>"><button class="btn btn-warning"><i class="fas fa-pen"></i> Update</button></a>
                                 </td>

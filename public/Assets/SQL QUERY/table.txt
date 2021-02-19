@@ -71,3 +71,23 @@ CREATE TABLE loan
     FOREIGN KEY (emp_id) REFERENCES empinfo(emp_id),
     PRIMARY KEY(emp_id)
 );
+
+CREATE TABLE attendance
+(
+    uiid int(30),
+    attendace_date date,
+    emp_id int(30),
+    time_in timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    time_out timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    comments varchar(255),
+    overtime varchar(30),
+    PRIMARY KEY (uiid),
+    FOREIGN KEY (emp_id) REFERENCES empinfo(emp_id)
+);
+
+CREATE TABLE attendancestatus
+(
+    status_id int(30),
+    status_type varchar(30),
+    PRIMARY KEY(status_id)
+);

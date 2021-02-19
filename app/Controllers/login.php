@@ -40,6 +40,8 @@ class login extends Controller
                 $userdata=$this->loginModal->verifyid($id);
                 if ($userdata)
                 {
+                    var_dump($userdata);
+                    var_dump($pass);
                     if (password_verify($pass,$userdata['pass']))
                     {
                         if ($userdata['status']=="active")
@@ -90,14 +92,14 @@ class login extends Controller
                     }
                     else
                     {
-                        $this->session->setTempdata("error",'sorry! id or pass does not match',3);
+                        $this->session->setTempdata("error",'sorry! iddoes not match',3);
                         return redirect()->to(current_url());
                     }
 
                 }
                 else
                 {
-                    $this->session->setTempdata("error",'sorry! id or pass does not match',3);
+                    $this->session->setTempdata("error",'sorry!  pass does not match',3);
                     return redirect()->to(current_url());
                 }
             }

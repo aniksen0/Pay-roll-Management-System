@@ -85,11 +85,11 @@
             </div>
             <div class="sidebar--link">
                 <i class="fas fa-money-check-alt"></i>
-                <a href="<?=base_url();?>/salary"">Salary Info</a>
+                <a href="<?=base_url();?>/salary">Salary Info</a>
             </div>
             <div class="sidebar--link active">
                 <i class="fas fa-concierge-bell"></i>
-                <a href="#">Attendance and leave</a>
+                <a href="<?=base_url();?>/attendance">Attendance and leave</a>
             </div>
             <div class="sidebar--link">
                 <i class="fa fa-clock"></i>
