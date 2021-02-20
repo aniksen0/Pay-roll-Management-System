@@ -31,6 +31,7 @@
                                 <th scope="col">email</th>
                                 <th scope="col">contact Number</th>
                                 <th scope="col">Statusr</th>
+                                <th scope="col">Employee Role</th>
                                 <th scope="col">Joined</th>
                                 <th scope="col"> Action</th>
 
@@ -49,10 +50,24 @@
                                     <td><?=$user->emp_email?></td>
                                     <td><?=$user->emp_contact_number?></td>
                                     <td><?=$user->status?></td>
+                                    <td>
+                                        <?php if ($user->emp_role==1): ?>
+                                            <?="System Admin";?>
+                                        <?php endif; ?>
+
+                                        <?php if ($user->emp_role==2): ?>
+                                            <?="Human Resource"?>
+                                        <?php endif; ?>
+
+                                        <?php if ($user->emp_role==3): ?>
+                                            <?="Employee"?>
+                                        <?php endif; ?>
+
+                                    </td>
                                     <td><?=$user->emp_joining_date?></td>
                                     <td><a onclick="sure()" href="<?=base_url('dashboard/userdelete/'.$user->emp_id)?>"><button class="btn btn-danger"><i class="fas fa-trash-alt"></i> delete </button></a>
                                         <a href="<?=base_url('dashboard/useredit/'.$user->emp_id)?>"><button class="btn btn-warning"><i class="fas fa-pen"></i> Update</button></a>
-                                        <a href="<?=base_url('userprofile/userview/'.$user->emp_id)?>"> <button class="btn btn-info"><i class="fas fa-search"></i> View</button></a>
+                                        <a href="<?=base_url('userprofile/userviewHr/'.$user->emp_id)?>"> <button class="btn btn-info"><i class="fas fa-search"></i> View</button></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

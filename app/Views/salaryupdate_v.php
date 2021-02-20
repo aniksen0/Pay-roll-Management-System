@@ -27,8 +27,8 @@
             <div class="form-row row">
 
                 <div class="col-sm-4">
-                    <label for="id"><b>Update employee Id:</b></label>
-                    <input type="text" name="id" value="<?=$emp_salary['emp_id']?>">
+                    <label for="id"><b> employee Id:</b></label>
+                    <input type="text" readonly name="id" value="<?=$emp_salary['emp_id']?>">
                 </div>
             </div>
             <div class="form-row row">

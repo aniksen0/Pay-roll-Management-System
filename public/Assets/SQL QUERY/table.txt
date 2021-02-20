@@ -91,3 +91,14 @@ CREATE TABLE attendancestatus
     status_type varchar(30),
     PRIMARY KEY(status_id)
 );
+
+ALTER TABLE attendance ADD COLUMN status1 int(30);
+
+CREATE TABLE work_time (
+
+    emp_id int(30),
+    jobtypes int(30),
+    worktimelimit varchar(30),
+    PRIMARY KEY(emp_id),
+    FOREIGN KEY(emp_id) REFERENCES jobtypes(typeid)
+);

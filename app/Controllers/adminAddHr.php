@@ -13,6 +13,13 @@ use CodeIgniter\Controller;
 
 class adminAddHr extends Controller
 {
+    public $session;
+    public function __construct()
+    {
+        $this->session= session();
+
+    }
+
     public function index()
     {
         echo 'add HR system admin';

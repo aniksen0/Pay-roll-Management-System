@@ -13,6 +13,7 @@ use CodeIgniter\Controller;
 use App\Models\userProfileModel;
 class userprofile extends Controller
 {
+    public $attendanceData;
     public $userdata;
     public function __construct()
     {
@@ -25,16 +26,14 @@ class userprofile extends Controller
         return redirect()->to("/login");
     }
         $id=session()->getTempdata("id");
-
         $data['emp_info']=$this->userdata->loaddata($id);
 
         return view("userprofile_v",$data);
     }
-    public function userview($id)
+    public function userviewHr($id)
     {
         $data['emp_info']=$this->userdata->loaddata($id);
-
-        return view("userprofile_v",$data);
+        return view("userprofileHr_v",$data);
     }
 
 }

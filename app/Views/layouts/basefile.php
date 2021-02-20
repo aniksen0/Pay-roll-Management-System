@@ -93,7 +93,7 @@
             </div>
             <div class="sidebar--link">
                 <i class="fa fa-clock"></i>
-                <a href="#">Work Time</a>
+                <a href="<?=base_url();?>/Worktime"">Work Time</a>
             </div>
             <h2>Update</h2>
             <div class="sidebar--link">

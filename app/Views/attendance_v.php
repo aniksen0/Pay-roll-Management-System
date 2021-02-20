@@ -9,7 +9,7 @@
         </div>
         <div class="col-12 col-sm-6 ">
 
-            <a href="<?=base_url("attendance/manualattendance/")?>"><button class="btn btn-danger float-end">Manual attendance Update</button> </a>
+            <a href="<?=base_url("attendance/manualattendancepage/")?>"><button class="btn btn-danger float-end">Manual attendance Update</button> </a>
         </div>
     </div>
     <?php if(session()->getTempdata('success')):?>
@@ -44,11 +44,27 @@
                             <tr>
                                 <td><?=$row["attendance_date"]?></td>
                                 <td><?=$row["emp_id"]?></td>
-                                <td><?=$row["status1"]?></td>
+                                <td>
+                                    <?php if ($row['status1']==1): ?>
+                                        <?="On Leave";?>
+                                    <?php endif; ?>
+
+                                    <?php if ($row['status1']==2): ?>
+                                        <?="Half Day"?>
+                                    <?php endif; ?>
+
+                                    <?php if ($row['status1']==3): ?>
+                                    <?="Present"?>
+                                    <?php endif; ?>
+
+                                    <?php if ($row['status1']==4): ?>
+                                    <?="Absent"?>
+                                    <?php endif; ?>
+                               </td>
                                 <td><?=$row["time_in"]?></td>
                                 <td><?=$row["time_out"]?></td>
                                 <td><?=$row["comments"]?></td>
-                                <td><?=$row["overtime"]?></td>
+                                <td><?=gmdate("H:i:s", (int)$row["overtime"])?></td>
                                 <td>
                                     <a href="<?=base_url('attendance/updatepage/'.$row["uiid"])?>"><button class="btn btn-warning"><i class="fas fa-pen"></i> Update</button></a>
                                 </td>
