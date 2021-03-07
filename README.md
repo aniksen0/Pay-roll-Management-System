@@ -2,18 +2,6 @@
 
 1.This is my first PET project Using codeigniter. 	
 
-3.In this system i have implemented basic crud operations calculation for Leave attendance and salary generate.
-
-5.It will generate salary based on employee work hour,Over_time and Leave.
-
-7.It can take input manually. Had 2 distinct interfaces for HR and employee.
-
-9.Employee can easily make there attendance by login there account.
-
-11.It has ability to import and export data.
-
-Auto_email notification in every time login.
-
 #NEW FEATURE WILL BE ADDED.
 
 ## What is CodeIgniter?
@@ -31,3 +19,5 @@ This system included
 6. Leave Mangement
 7. Generate Pay slip
 8. Import Data
+
+My PORTFOLIO::: https://aniksen.000webhostapp.com/
