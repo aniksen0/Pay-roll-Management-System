@@ -89,7 +89,15 @@
             </div>
             <div class="sidebar--link active">
                 <i class="fas fa-concierge-bell"></i>
-                <a href="<?=base_url();?>/attendance">Attendance and leave</a>
+                <a href="<?=base_url();?>/attendance">Attendance History|Manual</a>
+            </div>
+            <div class="sidebar--link active">
+                <i class="fas fa-concierge-bell"></i>
+                <a href="<?=base_url();?>/leave">Leave</a>
+            </div>
+            <div class="sidebar--link active">
+                <i class="fas fa-concierge-bell"></i>
+                <a href="<?=base_url();?>/attendance">Leave Status</a>
             </div>
             <div class="sidebar--link">
                 <i class="fa fa-clock"></i>
@@ -129,7 +137,8 @@
     </div>
 </div>
 <footer id="footer">
-    <p>&copyright All rights reserved by Astha IT solutions.2021</p>
+    <p>&copyright All rights reserved by ANIK SEN Please Don't copy.PET PROJECT </p>
+    <a href="https://aniksen.000webhostapp.com/">My PortFolio</a>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script defer src="<?=base_url();?>/public/Assets/css/font/js/all.js"></script>

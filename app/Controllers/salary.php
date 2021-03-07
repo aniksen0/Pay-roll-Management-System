@@ -30,8 +30,6 @@ class salary extends Controller
     public function index()
     {
         $data['emp_salary']=$this->datajoin->salarydatajoin();
-//        var_dump($data);
-
         return view("salary_v",$data);
     }
 
@@ -40,6 +38,12 @@ class salary extends Controller
     {
         $new["emp_salary"]=$this->empname->findAll();
 //        var_dump($new);
+
+        return view("addsalary_v",$new);
+
+    }
+    public function addsalary1()
+    {
         $data=[
             "emp_id"=>$this->request->getPost("id"),
             "emp_basic_salary"=>$this->request->getPost("ebs"),
@@ -51,20 +55,17 @@ class salary extends Controller
             "emp_bank_name"=>$this->request->getPost("ebn"),
             "emp_nomination"=>$this->request->getPost("en"),
         ];
-        $yes;
 
         if ($this->salaryModel->insert($data))
         {
             $this->session->setTempdata("success",' salary Data updated successfully',3);
-             redirect()->to('/salary/');
+            return redirect()->to('/salary/');
         }
         else
         {
             $this->session->setTempdata("error",'sorry! salary data didn\'t updated',3);
-             redirect()->to('/salary/');
+            return redirect()->to('/salary/');
         }
-
-        return view("addsalary_v",$new);
 
     }
 

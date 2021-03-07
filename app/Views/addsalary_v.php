@@ -23,7 +23,7 @@
 
         <hr>
 
-        <form action="<?= base_url("/salary/addsalary")?>" method="post">
+        <form action="<?= base_url("/salary/addsalary1")?>" method="post">
             <div class="form-row row">
 
                 <div class="col-sm-4">

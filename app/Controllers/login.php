@@ -46,20 +46,20 @@ class login extends Controller
                     {
                         if ($userdata['status']=="active")
                         {
-                            $time = date("h:i:sa");
-                            $to ="oporicito007@gmail.com";
-                            $subject="You have logged in your account";
-                            $message = "Dear".$userdata['emp_name']."You have been logged in the PRMS system. Time:".date("h:i:sa")."<strong> If this is not you please contact ADMIN <i>ASAP</i></strong>";
-                            $email =\Config\Services::email();
-                            $email->setTo($userdata['emp_email']);
-                            $email->setSubject($subject);
-                            $email->setMessage($message);
-                            $email->setFrom("oporicito007@gmail.com","Info");
-                            if(!$email->send())
-                            {
-                                $data['error'] = $email->printDebugger(["headers"]);
-                                print_r($data);
-                            }
+//                            $time = date("h:i:sa");
+//                            $to ="oporicito007@gmail.com";
+//                            $subject="You have logged in your account";
+//                            $message = "Dear".$userdata['emp_name']."You have been logged in the PRMS system. Time:".date("h:i:sa")."<strong> If this is not you please contact ADMIN <i>ASAP</i></strong>";
+//                            $email =\Config\Services::email();
+//                            $email->setTo($userdata['emp_email']);
+//                            $email->setSubject($subject);
+//                            $email->setMessage($message);
+//                            $email->setFrom("oporicito007@gmail.com","Info");
+//                            if(!$email->send())
+//                            {
+//                                $data['error'] = $email->printDebugger(["headers"]);
+//                                print_r($data);
+//                            }
 
 
                             $this->session->setTempdata("id",$id);

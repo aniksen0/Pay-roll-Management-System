@@ -5,11 +5,11 @@
 
     <div class="row d-flex justify-content-center align-items-center mt-5 bg-light">
         <div class="col-12 col-sm-6">
-            <h1 class="alert-heading">Employee Attendance Info</h1>
+            <h1 class="alert-heading">Employee Leave Info</h1>
         </div>
         <div class="col-12 col-sm-6 ">
 
-            <a href="<?=base_url("attendance/manualattendancepage/")?>"><button class="btn btn-danger float-end">Manual attendance Update</button> </a>
+            <a href="<?=base_url("leave/addleavepage/")?>"><button class="btn btn-danger float-end">Manual Leave Update</button> </a>
         </div>
     </div>
     <div class="row">
@@ -33,8 +33,6 @@
                         <th scope="col">date</th>
                         <th scope="col">emp_id</th>
                         <th scope="col">status</th>
-                        <th scope="col">Time In</th>
-                        <th scope="col">Time Out</th>
                         <th scope="col">Comment</th>
                         <th scope="col">Over_Time</th>
                         <th scope="col"> Action</th>
@@ -42,8 +40,8 @@
                     </thead>
 
                     <tbody>
-                    <?php if ($emp_attendance!=0):?>
-                        <?php foreach ($emp_attendance as $row): ?>
+                    <?php if ($emp_leave!=0):?>
+                        <?php foreach ($emp_leave as $row): ?>
                             <tr>
                                 <td><?=$row['attendance_date']?></td>
                                 <td><?=$row['emp_id']?></td>
@@ -57,25 +55,24 @@
                                     <?php endif; ?>
 
                                     <?php if ($row['status1']==3): ?>
-                                    <?="Present"?>
+                                        <?="Present"?>
                                     <?php endif; ?>
 
                                     <?php if ($row['status1']==4): ?>
-                                    <?="Absent"?>
+                                        <?="Absent"?>
                                     <?php endif; ?>
-                               </td>
-                                <td><?=$row["time_in"]?></td>
-                                <td><?=$row["time_out"]?></td>
+                                </td>
+
                                 <td><?=$row["comments"]?></td>
-                                <td>Calculating</td>
+                                <td><?=$row["overtime"]?></td>
                                 <td>
                                     <a href="<?=base_url('attendance/updatepage/'.$row["uiid"])?>"><button class="btn btn-warning"><i class="fas fa-pen"></i> Update</button></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
                     <?php endif ?>
-                    <?php if($emp_attendance==0): ?>
-                        <h3>No data here</h3>
+                    <?php if($emp_leave==0): ?>
+                        <h3>No Employee on leave</h3>
                     <?php endif;?>
                     </tbody>
 
@@ -84,4 +81,4 @@
         </div>
     </div>
 
-<?= $this->endSection("main")?>
+    <?= $this->endSection("main")?>

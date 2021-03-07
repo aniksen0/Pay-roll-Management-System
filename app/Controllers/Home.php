@@ -11,7 +11,7 @@ class Home extends BaseController
 
 	public function index()
 	{
-		return view('dashboard_v');
+		return view('login_v');
 	}
 	public function employeeRegister()
 	{

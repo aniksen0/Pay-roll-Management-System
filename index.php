@@ -4,7 +4,7 @@
 $minPHPVersion = '7.3';
 define("ENVIRONMENT","development");
 if (version_compare(PHP_VERSION, $minPHPVersion, '<'))
-{
+{define("ENVIRONMENT","development");
 	die("Your PHP version must be {$minPHPVersion} or higher to run CodeIgniter. Current version: " . PHP_VERSION);
 }
 unset($minPHPVersion);

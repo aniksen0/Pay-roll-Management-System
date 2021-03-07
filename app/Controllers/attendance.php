@@ -12,22 +12,33 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\attendancesimplifiedModel;
 use App\Models\userDataSimplifiedFile;
+use App\Models\attendanceModel;
 class attendance extends  Controller
 {
     public $attendanceSimplifiedModel;
     public $session;
     public $userdata;
+    public $attendance;
     public function  __construct()
     {
 
         $this->session= session();
         $this->attendanceSimplifiedModel=new attendancesimplifiedModel();
         $this->userdata= new userDataSimplifiedFile();
+        $this->attendance= new attendanceModel();
 
     }
     public function index()
     {
-        $data["emp_attendance"] = $this->attendanceSimplifiedModel->findAll();
+        $data["emp_attendance"] = $this->attendance->data();
+        $year=date("Y");
+        $month=date("m");
+        $day=date("d");
+        $realdate= $year."-".$month."-".$day;
+//        print_r(($year));
+//        print_r(($month));
+//        print_r(($day));
+//        var_dump($data['emp_attendance']);
         return view("attendance_v",$data);
     }
     public function updatepage($id)
