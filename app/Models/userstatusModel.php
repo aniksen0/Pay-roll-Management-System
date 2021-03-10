@@ -28,5 +28,21 @@ class userstatusModel extends Model
             return $result;
         }
     }
+    public function dataforsalary()
+    {
+        $query=$this->db->query("SELECT * from empinfo join salary where empinfo.emp_id=salary.emp_id");
+        $result=$query->getResult();
+        if (count($result)<1)
+        {
+            return $result=0;
+        }
+        else
+        {
+//            print_r($result);
+            return $result;
+        }
+
+    }
+
 
 }

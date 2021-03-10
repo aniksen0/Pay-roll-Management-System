@@ -38,7 +38,7 @@ class attendance extends  Controller
 //        print_r(($year));
 //        print_r(($month));
 //        print_r(($day));
-//        var_dump($data['emp_attendance']);
+        var_dump($data['emp_attendance']);
         return view("attendance_v",$data);
     }
     public function updatepage($id)
@@ -84,22 +84,14 @@ class attendance extends  Controller
         $time2 = date('H:i:s',strtotime($this->request->getPost("time_out")));
         $time1=strtotime($time1);
         $time2=strtotime($time2);
-        (int)$overTime=$time2-$time1;
-        if ($overTime>28800)
-        {
-            $addOverTime=$overTime-28800;
-            $addOverTime="+".$addOverTime;
+        if ($time1<$time2) {
+            (int)$overTime = $time2 - $time1;
         }
-        else if($overTime==28800)
+        else
         {
-            $addOverTime=0;
+            $this->session->setTempdata("Error",' Data didn\'t listed' ,3);
+            return redirect()->to('/attendance/');
         }
-        else if ($overTime<28800)
-        {
-            $addOverTime=28800-$overTime;
-            $addOverTime="-".$addOverTime;
-        }
-
 
         $data=[
             "attendance_date"=>$this->request->getPost("attendance_date"),
@@ -107,7 +99,7 @@ class attendance extends  Controller
             "time_in"=>$this->request->getPost("time_in"),
             "time_out"=>$this->request->getPost("time_out"),
             "comments"=>$this->request->getPost("comments"),
-            "overtime"=>$addOverTime,
+            "overtime"=>$overTime,
             "status1"=>$this->request->getPost("status1"),
             "created_by"=>$this->session->getTempdata("id").$this->session->getTempdata("name"),
         ];

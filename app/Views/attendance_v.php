@@ -36,7 +36,7 @@
                         <th scope="col">Time In</th>
                         <th scope="col">Time Out</th>
                         <th scope="col">Comment</th>
-                        <th scope="col">Over_Time</th>
+                        <th scope="col">Worked Time</th>
                         <th scope="col"> Action</th>
                     </tr>
                     </thead>
@@ -67,7 +67,15 @@
                                 <td><?=$row["time_in"]?></td>
                                 <td><?=$row["time_out"]?></td>
                                 <td><?=$row["comments"]?></td>
-                                <td>Calculating</td>
+                                <?php
+                                $h = floor($row['overtime']/3600);
+
+                                $m = floor($row['overtime'] -(3600*$h))/60;
+
+                                $s = floor($row['overtime'] -(3600*$h)-($m*60));
+
+                                ?>
+                                <td><?=" H: ".$h." M: ".$m." S: ".$s?></td>
                                 <td>
                                     <a href="<?=base_url('attendance/updatepage/'.$row["uiid"])?>"><button class="btn btn-warning"><i class="fas fa-pen"></i> Update</button></a>
                                 </td>

@@ -5,7 +5,7 @@
 
     <div class="row d-flex justify-content-center align-items-center mt-5 bg-light">
         <div class="col-12 col-sm-6">
-            <h1 class="alert-heading">Employee Leave Info</h1>
+            <h1 class="alert-heading">Employee Leave Info For <?=date("F")?></h1>
         </div>
         <div class="col-12 col-sm-6 ">
 

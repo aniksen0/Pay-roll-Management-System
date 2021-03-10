@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <title>Payroll Management Dashboard</title>
 </head>
 <body id="body">
@@ -31,9 +32,9 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <i class="fas fa-search"></i></button>
 
 
-<!--            <a href="#">-->
-<!--                <i class="fas fa-clock" aria-hidden="true"></i>-->
-<!--            </a>-->
+            <!--            <a href="#">-->
+            <!--                <i class="fas fa-clock" aria-hidden="true"></i>-->
+            <!--            </a>-->
             <!--lagbena-->
 
             <a href="#">
@@ -44,7 +45,62 @@
     </nav>
 
     <main>
-        <?= $this->renderSection('main'); ?>
+        <div class="card">
+
+            <div class="card-body">
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="main--cards">
+                <div class="card">
+                    <i class="fas fa-running"></i>
+                    <div class="card_inner">
+                        <p class="text-primary-p">Total Employee on leave</p>
+                        <span class="font-bold text-title"><?=$totalleave['nai']?></span>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-running"></i>
+                    <div class="card_inner">
+                        <p class="text-primary-p">Total Leave this <?=date('F')?></p>
+                        <span class="font-bold text-title"><?=$leave['leavemonth']?></span>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-running"></i>
+                    <div class="card_inner">
+                        <p class="text-primary-p">Total Sick/Half-day leave </p>
+                        <span class="font-bold text-title"><?=$sick['sickmonth']?></span>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-running"></i>
+                    <div class="card_inner">
+                        <p class="text-primary-p">Total Absent</p>
+                        <span class="font-bold text-title"><?=$absent['absentmonth']?></span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-4">
+                        <canvas id="myChart"></canvas>
+                    </div>
+
+                    <div class="col-12 col-sm-4">
+                        <canvas id="myChart1"></canvas>
+                    </div>
+
+                    <div class="col-12 col-sm-4">
+                        <canvas id="myChart2"></canvas>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+        </div>
     </main>
 
     <div id="sidebar">
@@ -101,25 +157,25 @@
             </div>
             <div class="sidebar--link">
                 <i class="fa fa-clock"></i>
-                <a href="<?=base_url();?>/Worktime">Work Time</a>
+                <a href="<?=base_url();?>/Worktime"">Work Time</a>
             </div>
             <h2>Loan</h2>
             <div class="sidebar--link">
                 <i class="fas fa-pen"></i>
-                <a href="<?=base_url();?>/loan">Employee Loan Info</a>
+                <a href="#">Employee Loan Info</a>
             </div>
             <div class="sidebar--link">
                 <i class="fas fa-balance-scale-right"></i>
-                <a href="<?=base_url();?>/loan/loanpercent">Update Loan</a>
+                <a href="#">Update Loan</a>
             </div>
             <div class="sidebar--link">
                 <i class="fas fa-strikethrough"></i>
-                <a href="<?=base_url();?>/salaryslip">Generate Salary</a>
+                <a href="#">-----</a>
             </div>
-<!--            <div class="sidebar--link">-->
-<!--                <i class="fa fa-files-o"></i>-->
-<!--                <a href="#"></a>-->
-<!--            </div>-->
+            <!--            <div class="sidebar--link">-->
+            <!--                <i class="fa fa-files-o"></i>-->
+            <!--                <a href="#"></a>-->
+            <!--            </div>-->
             <h2>Report</h2>
             <div class="sidebar--link">
                 <i class="fas fa-cogs"></i>
@@ -163,13 +219,82 @@
         }
     }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'doughnut',
+
+        // The data for our dataset
+        data: {
+            labels: ['Sick', 'Absent', 'Approved Leaves'],
+            datasets: [{
+                label: 'Ratio between sick absent and approved leave',
+                backgroundColor: ['rgb(0, 200, 255)','rgb(0, 247, 255)','rgb(0, 128, 255)'],
+                borderColor: 'rgb(0, 0, 0)',
+                data: [<?=$sick['sickmonth']?>,<?=$absent['absentmonth']?>,<?=$leave['leavemonth']?>,]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+</script>
+<script>
+    var ctx = document.getElementById('myChart1').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['SICK', 'Leave'],
+            datasets: [{
+                label: 'Sick leave vs leave',
+                backgroundColor: ['rgb(3, 255, 235)'],
+                borderColor: ['rgb(3, 252, 140)'],
+                data: [<?=$sick['sickmonth']?>,<?=$leave['leavemonth']?>]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+</script>
+<script>
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'pie',
+
+        // The data for our dataset
+        data: {
+            labels: ['SICK', 'Leave'],
+            datasets: [{
+                label: 'Sick leave vs leave',
+                backgroundColor: ['rgb(3, 252, 140)','rgb(55, 184, 132)'],
+                borderColor: ['rgb(3, 252, 140)'],
+                data: [<?=$sick['sickmonth']?>,<?=$leave['leavemonth']?>]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+</script>
 
 <script>
     function sure()
     {
-        alert("Do you really want to delete it?")
+        alert("Do you really want to delete it?");
     }
 </script
 
+
 </body>
 </html>
+
+
+
+

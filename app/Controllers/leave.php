@@ -35,6 +35,7 @@ class leave extends Controller
     public function addleavepage()
     {
         $data["emp_info"]=$this->userdata->findAll();
+        var_dump($data);
         return view("addleave_v",$data);
     }
     public function addleave()
@@ -67,6 +68,16 @@ class leave extends Controller
 
 
 
+    }
+    public function leavestatus()
+    {
+        $data['totalleave']=$this->leave->totalleave();
+        $data['leave']=$this->leave->totalleavemonth();
+        $data['sick']=$this->leave->totalsickmonth();
+        $data['absent']=$this->leave->totalabsentmonth();
+        $data['attendance']=$this->leave->leavedata();
+//        var_dump($data);
+        return view("leavestatus_v",$data);
     }
 
 }
